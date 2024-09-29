@@ -2,7 +2,5 @@
 <style lang="scss" src="./component.scss"></style>
 
 <template>
-  <div :class="b()">
-    <LoginForm />
-  </div>
+  <input :class="b()" :type="type" :value="modelValue" @input="handleValue" />
 </template>

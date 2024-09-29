@@ -1,0 +1,14 @@
+.ui-button {
+  &--view-success {
+    padding: 8px 16px;
+    background: #d6e7d4;
+    border: 1px solid #95b47f;
+    border-radius: $border-radius;
+    cursor: pointer;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+}

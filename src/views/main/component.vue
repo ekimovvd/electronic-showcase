@@ -2,7 +2,5 @@
 <style lang="scss" src="./component.scss"></style>
 
 <template>
-  <div :class="b()">
-    <LoginForm />
-  </div>
+  <div :class="b()">main</div>
 </template>

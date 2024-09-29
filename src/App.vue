@@ -34,3 +34,9 @@ export default defineComponent({
   },
 });
 </script>
+
+<style lang="scss">
+.app {
+  @include full-height();
+}
+</style>

@@ -4,7 +4,7 @@ export const AuthLoginRequestFactory = (
   payload: Partial<AuthLoginRequest> = {}
 ): AuthLoginRequest => {
   return {
-    login: payload.login ?? "",
+    email: payload.email ?? "",
     password: payload.password ?? "",
   };
 };

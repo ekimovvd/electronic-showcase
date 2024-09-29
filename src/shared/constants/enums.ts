@@ -5,8 +5,14 @@ export enum Layout {
 
 export enum RouteName {
   login = "login",
+  main = "main",
 }
 
 export enum RouteTo {
   login = "/login",
+  main = "/",
+}
+
+export enum LocalStorageName {
+  token = "token",
 }

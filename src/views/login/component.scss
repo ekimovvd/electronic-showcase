@@ -1,1 +1,7 @@
-.login-page {}
+.login-page {
+  @include full-height();
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

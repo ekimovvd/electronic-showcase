@@ -2,7 +2,7 @@
 <style lang="scss" src="./component.scss"></style>
 
 <template>
-  <div :class="b()">
-    <LoginForm />
-  </div>
+  <button :class="b('', { view })">
+    <slot />
+  </button>
 </template>

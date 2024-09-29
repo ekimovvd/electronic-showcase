@@ -1,8 +1,13 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
-import { LoginPage } from "@/views";
+import { LoginPage, MainPage } from "@/views";
 
-import { Layout, RouteName, RouteTo } from "@/shared/constants/enums";
+import {
+  Layout,
+  LocalStorageName,
+  RouteName,
+  RouteTo,
+} from "@/shared/constants/enums";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -13,6 +18,15 @@ const routes: Array<RouteRecordRaw> = [
       layout: Layout.auth,
     },
   },
+  {
+    path: RouteTo.main,
+    name: RouteName.main,
+    component: MainPage,
+    meta: {
+      layout: Layout.default,
+      isAuth: true,
+    },
+  },
 ];
 
 const router = createRouter({
@@ -21,6 +35,16 @@ const router = createRouter({
 });
 
 router.beforeEach(async (to, from, next) => {
+  const isAuth = to.matched.some((record) => record.meta.isAuth);
+
+  const token = localStorage.getItem(LocalStorageName.token);
+
+  if (token && !isAuth) {
+    next({ name: RouteName.main });
+  } else if (!token && isAuth) {
+    next({ name: RouteName.login });
+  }
+
   next();
 });
 

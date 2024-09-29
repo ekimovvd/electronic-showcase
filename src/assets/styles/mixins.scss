@@ -13,3 +13,7 @@
 @mixin golos-bold {
     font-family: "GolosText-Bold", sans-serif;
 }
+
+@mixin full-height {
+    min-height: 100vh;
+}

@@ -1,10 +1,12 @@
 import { AxiosInstance } from "axios";
 
-import { AuthLoginRequest } from "./repo";
+import { AuthLoginRequest, AuthLoginResponse } from "./repo";
 import { AuthUrlGenerator } from "./url-generator";
 
+import { DELAY } from "@/shared/constants/constants";
+
 export interface AuthProjectRepository {
-  login(payload: AuthLoginRequest): Promise<void>;
+  login(payload: AuthLoginRequest): Promise<AuthLoginResponse>;
 }
 
 export class AuthHttpRepo implements AuthProjectRepository {
@@ -13,10 +15,18 @@ export class AuthHttpRepo implements AuthProjectRepository {
     private readonly urlGenerator: AuthUrlGenerator
   ) {}
 
-  async login(payload: AuthLoginRequest): Promise<void> {
-    console.log(payload);
-    // const { data } = await this.axios.get<
-    //   ResponseData<AdminCurrencyShowResponse[]>
-    // >(this.urlGenerator.list(this.userId, type));
+  async login({
+    email,
+    password,
+  }: AuthLoginRequest): Promise<AuthLoginResponse> {
+    const token = btoa(`${email}:${password}`);
+
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          token,
+        });
+      }, DELAY);
+    });
   }
 }
