@@ -1,7 +1,7 @@
-import ProfileModuleState from "@/store/modules/profile";
+import TrashModuleState from "@/store/modules/trash";
 
 export interface ProjectStore {
-  profile: ProfileModuleState;
+  trash: TrashModuleState;
 }
 
 export interface StoreGetters {

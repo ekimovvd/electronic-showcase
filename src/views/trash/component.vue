@@ -2,9 +2,5 @@
 <style lang="scss" src="./component.scss"></style>
 
 <template>
-  <div :class="b()">
-    <DefaultNavbar />
-
-    <router-view />
-  </div>
+  <div :class="b()">trash-page</div>
 </template>

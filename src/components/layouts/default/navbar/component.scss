@@ -1,0 +1,50 @@
+.default-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  padding: 24px;
+
+  &__logo {
+    @include golos-medium;
+
+    padding: 8px 16px;
+    border: 1px solid black;
+    font-size: 18px;
+    line-height: 22px;
+    color: black;
+  }
+
+  &__trash {
+    @include golos-medium;
+
+    padding: 8px 32px;
+    border: 1px solid black;
+    font-size: 18px;
+    line-height: 22px;
+    color: black;
+    border-radius: $border-radius;
+    position: relative;
+  }
+
+  &__trash-counter {
+    @include golos-medium;
+
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    z-index: 1;
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 8px;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    line-height: 14px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+  }
+}

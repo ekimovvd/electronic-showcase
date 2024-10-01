@@ -1,9 +1,11 @@
 import { AuthProjectRepository } from "./modules/auth";
+import { ProductsProjectRepository } from "./modules/products";
 
-import ProfileModuleState from "@/store/modules/profile";
+import TrashModuleState from "@/store/modules/trash";
 
 export interface ProjectServices {
   authRepository: AuthProjectRepository;
+  productsRepository: ProductsProjectRepository;
 
-  profileRepo: ProfileModuleState;
+  trashRepo: TrashModuleState;
 }

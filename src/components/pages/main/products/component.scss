@@ -1,0 +1,43 @@
+.main-products {
+  padding: 16px;
+
+  &__title {
+    @include golos-medium;
+
+    font-size: 28px;
+    line-height: 32px;
+    margin-bottom: 24px;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  &__card {
+    border: 1px solid black;
+  }
+
+  &__card-preview {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+  }
+
+  &__card-content {
+    border-top: 1px solid black;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 24px;
+  }
+
+  &__card-title {
+    @include golos-medium;
+
+    font-size: 14px;
+    line-height: 18px;
+  }
+}

@@ -1,1 +1,1 @@
-export { default as Profile } from "@/store/modules/profile";
+export { default as Trash } from "@/store/modules/trash";

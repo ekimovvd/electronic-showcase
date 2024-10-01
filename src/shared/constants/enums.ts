@@ -6,11 +6,13 @@ export enum Layout {
 export enum RouteName {
   login = "login",
   main = "main",
+  trash = "trash",
 }
 
 export enum RouteTo {
   login = "/login",
   main = "/",
+  trash = "/trash",
 }
 
 export enum LocalStorageName {

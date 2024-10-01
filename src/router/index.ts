@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
-import { LoginPage, MainPage } from "@/views";
+import { LoginPage, MainPage, TrashPage } from "@/views";
 
 import {
   Layout,
@@ -22,6 +22,15 @@ const routes: Array<RouteRecordRaw> = [
     path: RouteTo.main,
     name: RouteName.main,
     component: MainPage,
+    meta: {
+      layout: Layout.default,
+      isAuth: true,
+    },
+  },
+  {
+    path: RouteTo.trash,
+    name: RouteName.trash,
+    component: TrashPage,
     meta: {
       layout: Layout.default,
       isAuth: true,

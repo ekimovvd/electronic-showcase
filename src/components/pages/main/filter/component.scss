@@ -1,0 +1,58 @@
+.main-filter {
+  border-right: 1px solid black;
+  padding: 8px 16px;
+
+  &__title {
+    @include golos-medium;
+
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  &__groups {
+    display: grid;
+    grid-row-gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  &__group {
+    display: grid;
+    grid-row-gap: 4px;
+  }
+
+  &__group-label {
+    @include golos-semi-bold;
+
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  &__fields {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 12px;
+  }
+
+  &__field {
+    display: grid;
+    grid-row-gap: 2px;
+  }
+
+  &__field-label {
+    @include golos-semi-bold;
+
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  &__field-input {
+    width: 100%;
+  }
+
+  &__buttons {
+    display: grid;
+    grid-row-gap: 12px;
+  }
+}

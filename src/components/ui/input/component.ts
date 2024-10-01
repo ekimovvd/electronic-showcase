@@ -1,16 +1,22 @@
-import { defineComponent } from "vue";
+import { defineComponent, PropType } from "vue";
 
 import { COMPONENT_NAME } from "./attributes";
+
+enum Type {
+  text = "text",
+  password = "password",
+  number = "number",
+}
 
 export default defineComponent({
   name: COMPONENT_NAME,
   props: {
     type: {
-      type: String,
-      default: "text",
+      type: <PropType<Type>>String,
+      default: Type.text,
     },
     modelValue: {
-      type: String,
+      type: [String, Number],
       default: "",
     },
   },
@@ -19,7 +25,18 @@ export default defineComponent({
   },
   methods: {
     handleValue(event: Event): void {
-      this.$emit("update:modelValue", (<HTMLInputElement>event.target).value);
+      const value = (<HTMLInputElement>event.target).value;
+
+      switch (this.type) {
+        case Type.number:
+          this.$emit("update:modelValue", Number(value));
+
+          break;
+        default:
+          this.$emit("update:modelValue", value);
+
+          break;
+      }
     },
   },
 });
